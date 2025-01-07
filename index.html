@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A fake portfolio website for a person named Ashley Ailliams">
     <title>Homepage</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="top">
+      <div>
+        <img
+          class="profile-picture"
+          src="./img/person_bodyshot_1920_2880.jpg"
+          alt="Ashley Williams"
+          srcset="
+            ./img/person_bodyshot_640_960.jpg    640w,
+            ./img/person_bodyshot_1280_1920.jpg 1920w,
+            ./img/person_bodyshot_1920_2880.jpg 1920w
+          "
+          sizes="(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
+          width="1920"
+          height="2880"
+        />
+        <h2 class="name">Ashley Williams</h2>
+      </div>
+      <div>
+        <h2>About me</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, nostrum
+          fugit dolorem optio inventore officia ut? Quos voluptatibus incidunt,
+          dolores nesciunt, autem cumque laborum fugiat facere distinctio, et
+          accusantium tempora! Perferendis animi quaerat blanditiis minus,
+          voluptas maiores accusantium cumque aperiam, atque dolore vero
+          incidunt nisi! Cum libero voluptate veritatis. Eos expedita dolor odio
+          architecto vitae est non, voluptas earum veritatis?
+        </p>
+        <nav>
+          <a href="#top"><img src="img/linkedin-logo.svg" alt="Linkedin logo"></a>
+          <a href="#top"><img src="img/github-logo.svg" alt="Github Logo"></a>
+          <a href="#top"><img src="img/twitter-logo.svg" alt="twitter logo"></a>
+        </nav>
+      </div>
+    </header>
+  </body>
 </html>

@@ -49,3 +49,107 @@ table {
 }
 
 /*page style below here*/
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+    padding-top: 2rem;
+}
+
+header::before {
+    position: absolute;
+    top: 0;
+    content: " ";
+    width: 100%;
+    height: 45%;
+    background: teal;
+    z-index: -1;
+    transform: skewY(-8deg);
+    transform-origin: 0 100%;
+}
+
+header > div:first-child {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+}
+
+/*style for header picture and name*/
+@keyframes slide-in-from-left {
+    from {
+        transform: translateX(-150%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-from-right {
+    from {
+        transform: translate(600px, -100%);
+    }
+
+    to {
+        transform: translate(0, -100%);
+    }
+}
+
+.name {
+    font: 3rem "Times New Roman";
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    animation: slide-in-from-right 1s ease-out forwards;
+    color: goldenrod;
+    text-shadow: blue 1px 1px;
+    background-color: bisque;
+}
+
+img.profile-picture {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    animation: slide-in-from-left 1s ease-out forwards;
+}
+
+/*about me section*/
+
+header > div:last-child {
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2em;
+
+}
+
+header > div:last-child > h2 {
+    font: 2rem helvetica;
+}
+
+header > div:last-child > p {
+    color: grey;
+    font: 1.2rem helvetica;
+}
+
+nav {
+    display: flex;
+    gap: 1em;
+}
+
+nav img {
+    width: 40px;
+    height: 40px;
+}
