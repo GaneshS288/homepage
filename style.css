@@ -82,6 +82,8 @@ header::before {
 header > div:first-child {
     position: relative;
     width: 80%;
+    min-width: 250px;
+    box-shadow: grey 2px 2px 4px;
 }
 
 /*style for header picture and name*/
@@ -121,7 +123,6 @@ img.profile-picture {
     height: 100%;
     width: 100%;
     animation: slide-in-from-left 1s ease-out forwards;
-    box-shadow: grey 2px 2px 4px;
 }
 
 /*about me section*/
@@ -220,5 +221,50 @@ h4 {
 section > div > a > img {
     width: 26px;
     height: 26px;
+}
+
+/*footer style below*/
+
+footer {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2em;
+    justify-content: center;
+    align-content: center;
+    background-color: aqua;
+    padding-top: 2em;
+}
+
+footer > div.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.contact-info > div {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1em;
+    width: 80%;
+}
+
+div.contact-info h2 {
+    align-self: center;
+    font: 2rem helvetica;
+}
+
+div.contact-info > div > p {
+    font: 1.2rem helvetica;
+}
+
+div.contact-info nav {
+    align-self: center;
+}
+
+address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    font: 0.8rem "helvetica";
 }
 
