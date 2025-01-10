@@ -130,8 +130,8 @@ img.profile-picture {
 header > div:last-child {
     width: 80%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 1.2em;
 }
 
@@ -164,7 +164,6 @@ main {
 }
 
 main > h2 {
-    justify-self: center;
     font: 2rem helvetica;
     width: 80%;
     text-align: center;
@@ -275,6 +274,36 @@ address {
 }
 
 @media (min-width: 750px) {
+    header {
+        display: block;
+        min-height: 60vh;
+    }
+
+    header > div:first-child {
+        float: left;
+        max-width: 300px;
+    }
+
+    header > div:last-child {
+        background: whitesmoke;
+        width: auto;
+    }
+
+    header > div:last-child > h2 {
+        grid-area: heading;
+    }
+
+    header > div:last-child > p {
+        grid-area: para;
+    }
+
+    header > div:last-child > nav {
+        display: none;
+    }
+
+    main > h2 {
+        text-align: start;
+    }
 
     div.contact-info h2 {
         align-self: stretch;
