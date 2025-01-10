@@ -275,18 +275,19 @@ address {
 
 @media (min-width: 750px) {
     header {
-        display: block;
-        min-height: 60vh;
+        flex-direction: row;
+        align-items: start;
     }
 
     header > div:first-child {
-        float: left;
-        max-width: 300px;
+        flex: 1 1 300px;
+        width: auto;
+        min-width: auto;
     }
 
     header > div:last-child {
         background: whitesmoke;
-        width: auto;
+        flex: 5 1 auto;
     }
 
     header > div:last-child > h2 {
