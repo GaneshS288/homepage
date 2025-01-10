@@ -79,7 +79,17 @@ header::before {
     transform-origin: 0 100%;
 }
 
-header > div:first-child {
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+}
+
+
+.header-container > div:first-child {
     position: relative;
     width: 80%;
     min-width: 250px;
@@ -119,7 +129,7 @@ header > div:first-child {
 }
 
 img.profile-picture {
-    object-fit: contain;
+    object-fit: cover;
     height: 100%;
     width: 100%;
     animation: slide-in-from-left 1s ease-out forwards;
@@ -127,7 +137,7 @@ img.profile-picture {
 
 /*about me section*/
 
-header > div:last-child {
+.header-container > div:last-child {
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -135,11 +145,11 @@ header > div:last-child {
     gap: 1.2em;
 }
 
-header > div:last-child > h2 {
+.header-container > div:last-child > h2 {
     font: 2rem helvetica;
 }
 
-header > div:last-child > p {
+.header-container > div:last-child > p {
     color: grey;
     font: 1.2rem helvetica;
 }
@@ -264,7 +274,7 @@ address {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    font: 1rem "helvetica";
+    font: 1.2rem "helvetica";
 }
 
 .footer-img > img {
@@ -275,30 +285,49 @@ address {
 
 @media (min-width: 750px) {
     header {
-        flex-direction: row;
-        align-items: start;
+        padding-top: 8rem;
     }
-
-    header > div:first-child {
-        flex: 1 1 300px;
-        width: auto;
-        min-width: auto;
-    }
-
-    header > div:last-child {
+    
+    .header-container {
+        display: block;
+        width: 90%;
         background: whitesmoke;
-        flex: 5 1 auto;
+        box-shadow: grey 0 0 2px;
     }
 
-    header > div:last-child > h2 {
-        grid-area: heading;
+    .header-container > div:first-child {
+        float: left;
+        width: 400px;
+        margin: -5rem 2rem 1rem -2rem;
     }
 
-    header > div:last-child > p {
-        grid-area: para;
+    @keyframes slide-in-from-right-750px {
+        from {
+            transform: translate(100vw, -580px);
+        }
+
+        to {
+            transform: translate(80%, -580px);
+        }
     }
 
-    header > div:last-child > nav {
+    .header-container > div:first-child > h2 {
+        animation: slide-in-from-right-750px 1s ease-in forwards;
+        background: transparent;
+    }
+
+    .header-container > div:last-child {
+        width: auto;
+        display: block;
+        padding: 4em 2em;
+    }
+
+    .header-container > div:last-child > h2 {
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+
+    .header-container > div:last-child > nav {
         display: none;
     }
 
@@ -319,5 +348,53 @@ address {
     .footer-img {
         padding: 2em;
         max-width: 500px;
+    }
+}
+
+@media (min-width: 1100px) {
+    header {
+        padding-top: 2rem;
+    }
+
+    .header-container {
+        width: 80%;
+        background: transparent;
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .header-container > div:first-child {
+        float: none;
+        margin: 0;
+    }
+
+    .header-container > div:first-child > h2 {
+        animation: slide-in-from-right 1s ease-in forwards;
+        background: bisque;
+    }
+
+    .header-container > div:last-child {
+        background: whitesmoke;
+        box-shadow: grey 0 0 2px;
+        padding: 1em;
+        display: flex;
+        flex: 1 1 500px;
+        align-self: center ;
+    }
+
+    .header-container > div:last-child > nav {
+        display: flex;
+        align-self: end;
+    }
+
+    address {
+        font: 1.6rem helvetica;
+    }
+
+    .footer-img {
+        max-width: 700px;
     }
 }
